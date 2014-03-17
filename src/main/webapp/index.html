@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>GCalFinance</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <link rel="apple-touch-icon" href="image/icon.png" />
+        <link rel="shortcut icon" href="image/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
+        <script src="//www.google.com/jsapi"></script>
+    </head>
+    <body>
+        <header>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="left"><div id="header_left"></div></td>
+                        <td class="center">
+                        <div id="header_main">
+                            <h3>GCalFinance</h3>
+                        </div></td>
+                        <td class="right">
+                        <div id="header_right">
+                            <button id="authorize_button" style="display:none;">
+                                authorize
+                            </button>
+                        </div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </header>
+        <div id="content">
+            <div id="prev_month" style="display:none;"></div>
+            <div id="this_month" style="display:none;">
+                this month
+            </div>
+            <div id="next_month" style="display:none;"></div>
+            <div id="calendar_loading" style="dispay:none">
+                <img src="image/loading.gif" />
+            </div>
+            <div id="calendar" style="display:none">
+                <iframe id="calendar_frame" style="border: 0" width="100%" frameborder="0" scrolling="no"></iframe>
+            </div>
+        </div>
+        <footer>
+            <table>
+                <tbody>
+                    <tr>
+                        <td  class="left"><div id="footer_left"></div></td>
+                        <td  class="center">
+                        <div id="footer_main">
+                            Copyright &copy; 2014
+                        </div></td>
+                        <td class="right">
+                        <div id="footer_right">
+                            <button id="logout_button" style="display:none;">
+                                logout
+                            </button>
+                        </div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </footer>
+        <script src="script/main.js"></script>
+        <script>
+            /**
+             * Goolg の client API の読み込み時に実行する
+             */
+            window.onClientLoad = function() {
+                f.onClientLoad();
+            };
+        </script>
+        <script src="https://apis.google.com/js/client.js?onload=onClientLoad"></script>
+    </body>
+    <iframe id="logout_frame" style="display: none"></iframe>
+</html>
