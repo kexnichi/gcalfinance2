@@ -31,7 +31,6 @@ window.constants = {
      * @type {string}
      */
     GOOGLE_CALENDAR_URI : "//www.google.com/calendar/embed?showTabs=0&showPrint=0&showTitle=0&showTz=0&wkst=2&bgcolor=%23FFFFFF"
-    //    &src=5pfsfk1dd28tah0n25topqbckc%40group.calendar.google.com&src=bic287aafaaa9n3kvhpiltr2ms%40group.calendar.google.com&src=rdqm1lt1id4ea14flk3l05hcbs%40group.calendar.google.com&src=41f0vsti5kvqq9b7f2s17vl9ok%40group.calendar.google.com&src=he6rkmjgnu89dt6onvs6sdjatk%40group.calendar.google.com&src=qm2d9b8emipj34c4rfgsl4av0s%40group.calendar.google.com&src=m36vri51sbkmrl7a15s5oa4j8c%40group.calendar.google.com&';
 };
 
 window.data = {
@@ -83,7 +82,7 @@ window.f = {
         if (authResult && !authResult.error) {
             // ログイン成功時
             logoutButton.click(f.logout);
-            f.displayInline(logoutButton);
+            //f.displayInline(logoutButton);
             f.displayNone(authorizeButton);
             // 認証後のメイン処理
             f.main();
@@ -91,7 +90,7 @@ window.f = {
             // ログイン失敗時
             authorizeButton.click(f.login);
             f.displayInline(authorizeButton);
-            f.displayNone(logoutButton);
+            //f.displayNone(logoutButton);
         }
     },
 

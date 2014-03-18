@@ -10,7 +10,9 @@ header {
     height: 60px;
     position: fixed;
     top: 0px;
-    background-color: #aaaaaa;
+    background-color: #f7f7f7;
+    color: #6699ff;
+    border-bottom: solid 1px #bbbbbb;
 }
 
 footer {
@@ -18,7 +20,9 @@ footer {
     height: 40px;
     position: fixed;
     bottom: 0px;
-    background-color: #aaaaaa;
+    background-color: #f7f7f7;
+    color: #6699ff;
+    border-top: solid 1px #bbbbbb;
 }
 
 #content {
