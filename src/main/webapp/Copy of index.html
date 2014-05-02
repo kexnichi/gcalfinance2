@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>GCalFinance</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <link rel="apple-touch-icon" href="image/icon.png" />
+        <link rel="shortcut icon" href="image/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/jquery.slidemenu.css" />
+        <script src="//www.google.com/jsapi"></script>
+        <style type="text/css">
+            header #menu_button {
+                display: block;
+                width: 44px;
+                height: 44px;
+                background: URL(image/menu.png) no-repeat left top;
+                background-size: 22px;
+                text-indent: -9999px;
+                z-index: 9999;
+                position: absolute;
+                top: 15px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <section id="slidemenu" >
+            <nav id="slidemenu_contents" style="">
+                <div id="slidemenu_list">
+                    <div class="user_info">
+                        ログイン情報
+                    </div>
+                    <h1>menu</h1>
+                    <ul>
+                        <li>
+                            <a href="">ツイート</a>
+                        </li>
+                        <li>
+                            <a href="">お気に入り</a>
+                        </li>
+                        <li>
+                            <a href="">プロフィール</a>
+                        </li>
+                        <li>
+                            <a href="">リスト</a>
+                        </li>
+                        <li>
+                            <a href="">メンション</a>
+                        </li>
+                        <li>
+                            <a href="">メッセージ</a>
+                        </li>
+                        <li>
+                            <a href="">検索</a>
+                        </li>
+                        <li>
+                            <a href="">設定</a>
+                        </li>
+                        <li>
+                            <a href="">ログアウト</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </section>
+        <div id="container">
+
+            <header id="header" class="clearfix">
+                <h1>hoge</h1>
+                <nav id="menu_button">
+                    Menu
+                </nav>
+            </header>
+
+            <section id="TL">
+                hogehoge
+            </section>
+        </div>
+
+        <script src="script/main.js"></script>
+        <script>
+            /**
+             * Goolg の client API の読み込み時に実行する
+             */
+            window.onClientLoad = function() {
+                f.onClientLoad();
+            };
+        </script>
+        <script src="https://apis.google.com/js/client.js?onload=onClientLoad"></script>
+        <script src="script/jquery.slidemenu.js"></script>
+         <script>$("#menu_button").slideMenu({main_contents: "#container"});</script>
+    </body>
+    <iframe id="logout_frame" style="display: none"></iframe>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="shortcut icon" href="image/favicon.ico" />
+        <link rel="apple-touch-icon-precomposed" href="image/icon.png"/>
+        <title>sample4</title>
+        <link rel="stylesheet" type="text/css" href="lib/jSlideMenu/jquery.slidemenu.css" />
+        <link rel="stylesheet" type="text/css" href="stylesheet/main2.css" />
+        <script src="http://www.google.com/jsapi"></script>
+        <script>
+            google.load("jquery", "1");
+        </script>
+    </head>
+    <body>
+        <div id="slidemenu" class="slidemenu_custom">
+            <div id="slidemenu_contents">
+                <ul id="slidemenu_list">
+                    <li id="profile">
+                        <a href="javascript:f.login();"><span class="slidemenu_icon">≫</span>Login</a>
+                    </li>
+                    <li>
+                        <a href="javascript:f.openMonthly();"><span class="slidemenu_icon">月</span>Monthly</a>
+                    </li>
+                    <li>
+                        <a href=""><span class="slidemenu_icon">全</span>All</a>
+                    </li>
+                    <li>
+                        <a href="javascript:f.openGoogleCalendar();"><span class="slidemenu_icon">カ</span>Calendar</a>
+                    </li>
+                    <li>
+                        <a href="javascript:f.logout();"><span class="slidemenu_icon">≪</span>Logout</a>
+                    </li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <div id="container">
+            <header id="header">
+                <div id="menu_button">
+                    ≡
+                </div>
+            </header>
+            <div id="contents">
+                <div id="loading">
+                    <span id="loading-image"></span>
+                    <span id="loading-message"> Loading... </span>
+                </div>
+                <div id="monthly" class="hidden"></div>
+                <div id="all" class="hidden"></div>
+                <div id="calendar" class="hidden">
+                    <div id="calendar_wrapper">
+                        <iframe id="calendar_frame"></iframe>
+                    </div>
+                </div>
+            </div>
+            <footer id="footer">
+                footer
+            </footer>
+        </div>
+        <script>
+            window.onClientLoad = function() {
+                console.log("onClientLoad");
+                f.onClientLoad();
+            };
+        </script>
+        <script src="lib/jSlideMenu/jquery.slidemenu.js"></script>
+        <script src="javascript/main2.js"></script>
+        <script src="https://apis.google.com/js/client.js?onload=onClientLoad"></script>
+        <iframe id="logout_frame"></iframe>
+    </body>
+</html>

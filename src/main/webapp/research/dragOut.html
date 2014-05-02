@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>HTML5 drag out download link</title>
+    </head>
+    <body>
+        <nav>
+            <a id="downloadLink" data-downloadurl="application/zip:hoge.zip:http://127.0.0.1:8020/gcalfinance2/src/main/webapp/research/emacs-24.3.zip" href="http://127.0.0.1:8020/gcalfinance2/src/main/webapp/research/emacs-24.3.zip">drag out to download .zip</a>
+        </nav>
+        <script>
+            if (!!window.FileReader) {
+                document.getElementById('downloadLink').addEventListener('dragstart', function(e) {
+                    if (this.dataset) {
+                        e.dataTransfer.setData('DownloadURL', this.dataset.downloadurl);
+                    }
+                }, false);
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>Like native apps demo</title>
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="assets/lib/cssreset-min.css"/>
+	<link rel="stylesheet" href="assets/lib/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+
+<div id="global_header">mawatari.jp</div>
+
+<div id="content">
+	<div id="content-sample">
+		<h1>foo</h1>
+		<ul>
+			<li><a href="index.html">index</a></li>
+			<li><a href="foo.html">foo</a></li>
+			<li><a href="bar.html">bar</a></li>
+			<li><a href="baz.html">baz</a></li>
+			<li><a href="http://mawatari.jp/archives/web-apps-like-native-apps">このデモを紹介したブログ</a></li>
+		</ul>
+	</div>
+</div>
+
+<div id="global_footer">
+	<ul>
+		<li><i class="icon-caret-left big"></i></li>
+		<li><i class="icon-caret-right big"></i></li>
+		<li><i class="icon-repeat"></i></li>
+		<li><i class="icon-external-link"></i></li>
+		<li><i class="icon-cog"></i></li>
+	</ul>
+</div>
+<script type="text/javascript" src="assets/lib/jquery-2.0.0.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('a').click(function(){
+			location.href = $(this).attr('href');
+			return false;
+		});
+	});
+</script>
+</body>
+</html>

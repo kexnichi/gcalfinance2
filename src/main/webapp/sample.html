@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+        <link rel="stylesheet" type="text/css" href="stylesheets/jquery.slidemenu.css"/>
+        <style>
+            html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                outline: 0;
+                font-size: 100%;
+                vertical-align: baseline;
+                background: transparent;
+            }
+
+            body {
+                line-height: 1;
+                font-size: 14px/1.231;
+                color: #505050;
+                width: 100%;
+                background: #FFFFFF;
+            }
+            
+            #menu_button {
+                width: 48px;
+                height: 48px;
+                background:black;
+                /*background-image: url("images/menu.png")*/
+            }
+
+            #slidemenu li {
+                width: 220px;
+                list-style: none;
+                border-top: 1px solid #4D4D4D;
+                border-bottom: 1px solid #000;
+                line-height: 1.8;
+                padding: 10px 0 10px 20px;
+            }
+            #slidemenu li a {
+                display: block;
+                text-decoration: none;
+                color: #fff;
+            }
+            #slidemenu li img {
+                width: 32px;
+                height: 32px;
+                vertical-align: middle;
+                margin-right: 10px;
+            }
+
+            #container * {
+                width: 100%;
+                height: 100%;
+            }
+
+            #container header {
+                height: 60px;
+                position: fixed;
+                top: 0px;
+                background-color: #aaaaaa;
+            }
+
+            #container footer {
+                height: 40px;
+                position: fixed;
+                bottom: 0px;
+                background-color: #aaaaaa;
+            }
+
+        </style>
+        <title>jSlideMenu</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="script/jquery.slidemenu.js"></script>
+        <script>
+            $("#menu_button").slideMenu({
+                main_contents : "#container"
+            });
+        </script>
+    </head>
+    <body>
+        <div id="slidemenu" >
+            <div id="slidemenu_contents" style="">
+                <ul id="slidemenu_list">
+                    <li>
+                        <a href=""> <img src="images/profile.png" /> <span id="profilebox">User Name</span> </a>
+                    </li>
+                    <li>
+                        <a href="">メニュー1</a>
+                    </li>
+                    <li>
+                        <a href="">メニュー2</a>
+                    </li>
+                    <li>　</li>
+                    <li>　</li>
+                    <li>　</li>
+                    <li>　</li>
+                    <li>　</li>
+                    <li>　</li>
+                    <li>　</li>
+                    <li>　</li>
+                    <li>　</li>
+
+                </ul>
+            </div>
+        </div>
+        <div id="container">
+            <header id="header">
+                <nav id="menu_button"></nav>
+
+            </header>
+            <div id="contents" style="height: 900px; padding: 30px;">
+                <h1>naiyou</h1>
+
+            </div><!-- contents -->
+
+        </div>
+    </body>
+</html>

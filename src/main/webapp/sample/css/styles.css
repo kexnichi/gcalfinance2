@@ -1,0 +1,85 @@
+@charset "UTF-8";
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body{
+	line-height:1;
+	font-size:14px/1.231;
+	font-family: HiraKakuProN-W3,"ヒラギノ角ゴ ProN W3",Helvetica,sans-serif;
+	color: #505050;
+	width: 100%;
+	min-width:320px;
+	-webkit-text-size-adjust:none;
+	background: #FFFFFF;
+}
+
+nav ul {
+    list-style:none;
+}
+
+#navbox {
+	display: table;
+	width: 100%;
+	height: 48px;
+	background: url(../images/header-bg.png) repeat-x;
+}
+#left-nav {
+	display: table-cell;
+	text-align: center;
+	border-right: 1px solid #8B7965;
+	padding: 0 5px;
+	box-sizing: border-box;
+	width: 30px;
+	vertical-align: middle;
+}
+
+#menu_button {
+	width: 48px;
+	height: 48px;
+	background : #000000;
+}
+
+#slidemenu li {
+	width : 220px;
+	list-style: none;
+	border-top: 1px solid #4D4D4D;
+	border-bottom: 1px solid #000;
+	font-size:14px;
+	line-height: 1.8;
+	padding:10px 0 10px 20px;
+}
+#slidemenu li a {
+	display: block;
+	text-decoration: none;
+	color: #fff;
+}
+#slidemenu li:first-child {
+	border-top: none;
+	border-bottom:5px solid #ccc;
+}
+
+#slidemenu li:last-child {
+	border-bottom: none;
+}
+#slidemenu li img{
+	vertical-align: middle;
+	margin-right: 10px;
+}

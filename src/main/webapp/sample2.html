@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+        <link rel="stylesheet" type="text/css" href="stylesheets/jquery.slidemenu.css"/>
+        <style>
+            * {
+                margin: 0;
+                border: 0;
+                padding: 0;
+            }
+
+            #container * {
+                width: 100%;
+                height: 100%;
+            }
+            #wrapper {
+                margin: 60px 0 40px 0;
+                overflow: auto;
+            }
+            #header {
+                height: 60px;
+                position: fixed;
+                top: 0px;
+                background-color: #f7f7f7;
+                color: #6699ff;
+                border-bottom: solid 1px #bbbbbb;
+            }
+            #menu_button {
+                float: left;
+                display: inline;
+                margin: 8px 10px 8px 10px;
+                width: 44px;
+                height: 44px;
+                background-image: url("image/menu.png");
+            }
+            #header_main {
+                float: none;
+            }
+            #wrapper {
+                position: relative;
+                z-index: 1;
+                width: 100%;
+                overflow: hidden;
+            }
+            #footer {
+                height: 40px;
+                position: fixed;
+                bottom: 0px;
+                background-color: #f7f7f7;
+                color: #6699ff;
+                border-top: solid 1px #bbbbbb;
+            }
+            #slidemenu_list a {
+                color: red;
+            }
+        </style>
+        <title>jSlideMenu</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="script/jquery.slidemenu.js"></script>
+        <script type="text/javascript" src="script/iscroll.js"></script>
+        <script>
+            $("#menu_button").slideMenu({
+                main_contents : "#container"
+            });
+            
+            function setHeight() {
+                var headerH = document.getElementById('header').offsetHeight, wrapperH = window.innerHeight - headerH;
+                document.getElementById('wrapper').style.height = wrapperH + 'px';
+            }
+
+
+            window.addEventListener('onorientationchange' in window ? 'orientationchange' : 'resize', setHeight, false);
+            function loaded() {
+                setHeight();
+            }
+
+
+            document.addEventListener('DOMContentLoaded', loaded, false);
+
+            var myScroll;
+            function loaded() {
+                setHeight();
+                myScroll = new iScroll('scroller', {
+                    desktopCompatibility : true
+                });
+            }
+
+
+            document.addEventListener('touchmove', function(e) {
+                e.preventDefault();
+            }, false);
+
+        </script>
+    </head>
+    <body>
+        <div id="slidemenu">
+            <div id="slidemenu_contents">
+                <ul id="slidemenu_list">
+                    <li>
+                        <a href=""><span id="profilebox">User Name</span></a>
+                    </li>
+                    <li>
+                        <a href="">メニュー1</a>
+                    </li>
+                    <li>
+                        <a href="">メニュー2</a>
+                    </li>
+                    <li>
+                        ＿
+                    </li>
+                    <li>
+                        ＿
+                    </li>
+                    <li>
+                        ＿
+                    </li>
+                    <li>
+                        ＿
+                    </li>
+                    <li>
+                        ＿
+                    </li>
+                    <li>
+                        ＿
+                    </li>
+                    <li>
+                        ＿
+                    </li>
+                    <li>
+                        ＿
+                    </li>
+                    <li>
+                        ＿
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div id="container">
+            <header id="header">
+                <nav id="menu_button"></nav>
+                <div id="header_main">
+                    header
+                </div>
+            </header>
+            <div id="wrapper">
+                <div id="scroller">
+                    <h1>naiyou</h1>
+                    <h1>naiyou</h1>
+                    <h1>naiyou</h1>
+                    <h1>naiyou</h1>
+                    <h1>naiyou</h1>
+                    <h1>naiyou</h1>
+                    <h1>naiyou</h1>
+                    <h1>naiyou</h1>
+                    <h1>naiyou</h1>
+                    <h1>naiyou</h1>
+                    <h1>naiyou</h1>
+                    <h1>naiyou</h1>
+                    <h1>naiyou</h1>
+                    <h1>naiyou</h1>
+                    <h1>naiyou</h1>
+                    <h1>naiyou</h1>
+                </div>
+            </div>
+            <footer id="footer">
+                footer
+            </footer>
+        </div>
+    </body>
+</html>

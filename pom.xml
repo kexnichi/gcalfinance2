@@ -77,9 +77,9 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
                         <configuration>
                             <target>
                                 <echo message="Closure Compiler" />
-                                <copy todir="${project.build.directory}/${project.artifactId}/script"
+                                <copy todir="${project.build.directory}/${project.artifactId}/javascript"
                                 overwrite="true">
-                                    <fileset dir="src/main/webapp/script" />
+                                    <fileset dir="src/main/webapp/javascript" />
                                     <mapper type="glob" from="*.js" to="*.js.uncompressed.js" />
                                 </copy>
                                 <java classname="com.google.javascript.jscomp.CommandLineRunner" classpathref="maven.plugin.classpath"
@@ -88,9 +88,9 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
                                     <arg line="--compilation_level SIMPLE_OPTIMIZATIONS" />
                                     <arg line="--formatting print_input_delimiter" />
                                     <arg
-                                    line="--js ${project.build.directory}/${project.artifactId}/script/main.js.uncompressed.js" />
+                                    line="--js ${project.build.directory}/${project.artifactId}/javascript/main.js.uncompressed.js" />
                                     <arg
-                                    line="--js_output_file ${project.build.directory}/${project.artifactId}/script/main.js" />
+                                    line="--js_output_file ${project.build.directory}/${project.artifactId}/javascript/main.js" />
                                 </java>
                             </target>
                         </configuration>

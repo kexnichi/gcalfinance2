@@ -1,0 +1,35 @@
+#container {
+	background: #FFFFFF;
+	-webkit-transform: translate3d(0px, 0px, 1px);
+	-webkit-transition: .2s -webkit-transform ease-in-out;
+	z-index: 1;
+}
+#container.show {
+	-webkit-transform: translate3d(240px, 0px, 1px);
+	min-width: 320px;
+}
+
+
+#slidemenu.show {
+    height: 100%;
+    visibility: visible;
+    z-index: 1;
+    -webkit-transition: z-index 0s linear .2s;
+ }
+
+#slidemenu_contents {
+	display: none;
+	height: 100%;
+	position: relative;
+	width: 240px;
+}
+
+#slidemenu {
+	background-color: #333;
+	left: 0;
+	top: 0;
+	position: fixed;
+	visibility: hidden;
+	z-index: -1;
+	-webkit-transition: visibility 0s linear .2s;
+ }

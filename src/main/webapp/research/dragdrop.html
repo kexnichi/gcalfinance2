@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>HTML5 drag out download link</title>
+    </head>
+    <body>
+        <div id="downloadLink" style="width:100px;heighit:100px;" draggable="true">
+            kokowodoroppu
+        </div>
+        <a id="dl" href="http://127.0.0.1:8020/gcalfinance2/src/main/webapp/research/download.zip">drag out to download .zip</a>
+        <script>
+            var dl = document.getElementById('downloadLink');
+            dl.addEventListener('dragstart', function(e) {
+                e.dataTransfer.effectAllowed = "copy";
+
+                console.log("dragstart");
+            }, false);
+            dl.addEventListener('drag', function(e) {
+                e.preventDefault();
+                console.log("drag");
+            }, false);
+            dl.addEventListener('dragenter', function(e) {
+                e.preventDefault();
+                console.log("dragenter");
+            }, false);
+            dl.addEventListener('dragleave', function(e) {
+                e.preventDefault();
+                console.log("dragleave");
+            }, false);
+            dl.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                console.log("dragover");
+            }, false);
+            dl.addEventListener('drop', function(e) {
+                e.preventDefault();
+                console.log("drop");
+            }, false);
+            dl.addEventListener('dragend', function(e) {
+                e.preventDefault();
+                document.getElementById('dl').click();
+                //document.location.href = document.getElementById('dl').href;
+                console.log("dragend");
+            }, false);
+        </script>
+    </body>
+</html>

@@ -1,82 +1,102 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8" />
-        <title>GCalFinance</title>
-        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <link rel="apple-touch-icon" href="image/icon.png" />
+        <meta charset="utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
         <link rel="shortcut icon" href="image/favicon.ico" />
-        <link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
-        <script src="//www.google.com/jsapi"></script>
+        <link rel="apple-touch-icon-precomposed" href="image/icon.png"/>
+        <title>GCalFinance2</title>
+        <link rel="stylesheet" href="lib/DrawerSlideMenu/demo/normalize.css" />
+        <link rel="stylesheet" href="lib/DrawerSlideMenu/demo/styles.css" />
+        <link rel="stylesheet" href="lib/Swipe/style.css" />
+        <link rel="stylesheet" href="stylesheet/main.css" />
     </head>
     <body>
-        <header>
-            <table>
-                <tbody>
-                    <tr>
-                        <td class="left"><div id="header_left"></div></td>
-                        <td class="center">
-                        <div id="header_main">
-                            <h3>GCalFinance</h3>
-                        </div></td>
-                        <td class="right">
-                        <div id="header_right">
-                            <button id="authorize_button" style="display:none;">
-                                authorize
-                            </button>
-                        </div></td>
-                    </tr>
-                </tbody>
-            </table>
-        </header>
-        <div id="content">
-            <div id="prev_month" style="display:none;"></div>
-            <div id="this_month" style="display:none;">
-                this month
-            </div>
-            <div id="next_month" style="display:none;"></div>
-            <div id="calendar_loading" style="dispay:none">
-                <img src="image/loading.gif" />
-            </div>
-            <div id="calendar" style="display:none">
-                <iframe id="calendar_frame" style="border: 0" width="100%" frameborder="0" scrolling="no"></iframe>
-            </div>
+        <div id="mobile-menu" style="display:none;">
+            <nav id="main-nav">
+                <ul>
+                    <li id="profile">
+                        <a href="javascript:f.login();"><span class="menu_icon"> ≫ </span>Login</a>
+                    </li>
+                    <li>
+                        <a href="javascript:f.openMonthly();"><span class="menu_icon"> 月 </span>Monthly</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="menu_icon">全</span>All</a>
+                    </li>
+                    <li>
+                        <a href="javascript:f.openGoogleCalendar();"><span class="menu_icon"> カ </span>Calendar</a>
+                    </li>
+                    <li>
+                        <a href="javascript:f.logout();"><span class="menu_icon"> ≪ </span>Logout</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <footer>
-            <table>
-                <tbody>
-                    <tr>
-                        <td class="center">
-                        <div id="all_button">
-                            All
-                        </div></td>
-                        <td class="center">
-                        <div id="monthly_button">
-                            Monthly
-                        </div></td>
-                        <td class="center">
-                        <div id="calendar_button">
-                            calendar
-                        </div></td>
-                        <td class="center">
-                        <div id="logout_button">
-                            logout
-                        </div></td>
-                    </tr>
-                </tbody>
-            </table>
-        </footer>
-        <script src="script/main.js"></script>
+        <header class="header">
+            <nav id="menu_button"></nav>
+            <span id="header_title"> </span>
+            <span id="header_button"> <a href="#" id="header_button_prev" class="hidden"><span class="menu_icon">≪_prev</span></a><a href="#" id="header_button_next" class="hidden"><span class="menu_icon">next_≫</span></a></span>
+        </header>
+        <section class="content">
+            <div id="loading">
+                <span id="loading_image"> </span>
+                <span id="loading_message"> Loading... </span>
+            </div>
+            <div id="monthly" class="hidden">
+                <div id="monthly_slider" class="swipe">
+                    <div id="monthly_slider_wrapper"></div>
+                </div>
+            </div>
+            <div id="all" class="hidden"></div>
+            <div id="calendar" class="hidden">
+                <div id="calendar_wrapper">
+                    <iframe id="calendar_frame"></iframe>
+                </div>
+            </div>
+        </section>
+        <!--footer class="footer">
+        <span>FOOTER</span>
+        </footer-->
+        <iframe id="logout_frame" class="hidden"></iframe>
         <script>
-            /**
-             * Goolg の client API の読み込み時に実行する
-             */
-            window.onClientLoad = function() {
-                f.onClientLoad();
+//            window.cacheBust = new Date().getTime();
+            window.cacheBust = "";
+            window.loadScript = function(src, callback) {
+                var sc = document.createElement('script');
+                sc.type = 'text/javascript';
+                sc.onload = function() {
+                    if (callback) {
+                        callback('onload');
+                    }
+                };
+                sc.src = src;
+                var firstScript = document.getElementsByTagName( 'script' )[0];
+                firstScript.parentNode.insertBefore(sc, firstScript);
             };
+            window.onClientLoad = function() {
+                loadScript('javascript/main.js?' + cacheBust, function() {
+                    f.onClientLoad();
+                });
+            };
+            loadScript('//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js', function() {
+                loadScript('lib/DrawerSlideMenu/jquery.mobile-menu.js', function() {
+                    $(function() {
+                        $('body').mobile_menu({
+                            menu : ['#main-nav ul'],
+                            menu_width : 200,
+                            button_content : '≡',
+                            prepend_button_to : '#menu_button'
+                        });
+                    });
+                });
+                loadScript('lib/Swipe/swipe.js');
+                loadScript('//www.google.com/jsapi', function() {
+                    loadScript('https://apis.google.com/js/client.js?onload=onClientLoad');
+                });
+            });
         </script>
-        <script src="https://apis.google.com/js/client.js?onload=onClientLoad"></script>
     </body>
-    <iframe id="logout_frame" style="display: none"></iframe>
 </html>

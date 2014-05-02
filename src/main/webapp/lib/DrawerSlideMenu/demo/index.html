@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="cleartype" content="on">
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="APP TITLE">
+        
+		<link rel="stylesheet" href="normalize.css">
+		<link rel="stylesheet" href="styles.css">
+		<link href='../../Swipe-1.0/style.css' rel='stylesheet'/>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script src="../jquery.mobile-menu.js"></script>
+		<script>
+			$(function(){
+				$("body").mobile_menu({
+					menu: ['#main-nav ul', '#secondary-nav ul'],
+      		menu_width: 200,
+      		prepend_button_to: '#mobile-bar'
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<header>
+			<nav id="mobile-bar"></nav>
+			
+			<nav id="main-nav">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Nav 2</a></li>
+					<li><a href="#">Nav 3</a></li>
+					<li><a href="#">Nav 4</a></li>
+					<li><a href="#">Nav 5</a></li>
+					<li><a href="#">Nav 6</a></li>
+				</ul>
+			</nav>
+			
+			<nav id="secondary-nav">
+				<ul>
+					<li><a href="#">Secondary Nav 1</a></li>
+					<li><a href="#">Secondary Nav 2</a></li>
+					<li><a href="#">Secondary Nav 3</a></li>
+					<li><a href="#">Secondary Nav 4</a></li>
+					<li><a href="#">Secondary Nav 5</a></li>
+					<li><a href="#">Secondary Nav 6</a></li>
+				</ul>
+			</nav>
+			<h1>HEADER</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis velit eaque earum beatae assumenda doloribus debitis. Soluta voluptatum natus architecto possimus excepturi debitis expedita magnam nemo delectus et exercitationem ipsa.</p>
+		</header>
+		<section>
+			<h2>CONTENT</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis velit eaque earum beatae assumenda doloribus debitis. Soluta voluptatum natus architecto possimus excepturi debitis expedita magnam nemo delectus et exercitationem ipsa.</p>
+			
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis velit eaque earum beatae assumenda doloribus debitis. Soluta voluptatum natus architecto possimus excepturi debitis expedita magnam nemo delectus et exercitationem ipsa.</p>
+			
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis velit eaque earum beatae assumenda doloribus debitis. Soluta voluptatum natus architecto possimus excepturi debitis expedita magnam nemo delectus et exercitationem ipsa.</p>
+		
+		
+<h1>Swipe</h1>
+
+<h2>150px wide</h2>
+
+<div id='slider' class='swipe' style='width:150px'>
+  <ul>
+    <li style='display:block'><div>1</div></li>
+    <li style='display:none'><div>2</div></li>
+    <li style='display:none'><div>3</div></li>
+    <li style='display:none'><div>4</div></li>
+    <li style='display:none'><div>5</div></li>
+  </ul>
+</div>
+
+
+<h2>250px wide</h2>
+
+<div id='slider2' class='swipe' style='width:250px'>
+  <ul>
+    <li style='display:block'><div>1</div></li>
+    <li style='display:none'><div>2</div></li>
+    <li style='display:none'><div>3</div></li>
+    <li style='display:none'><div>4</div></li>
+    <li style='display:none'><div>5</div></li>
+  </ul>
+</div>
+
+
+<h2>Full width</h2>
+
+<div id='slider3' class='swipe'>
+  <ul>
+    <li style='display:block'><div>1</div></li>
+    <li style='display:none'><div>2</div></li>
+    <li style='display:none'><div>3</div></li>
+    <li style='display:none'><div>4</div></li>
+    <li style='display:none'><div>5</div></li>
+  </ul>
+</div>
+
+<a href='#' onclick='slider3.prev();return false;'>prev</a> 
+<a href='#' onclick='slider3.next();return false;'>next</a>
+<br><br>
+
+<h2>Arbitrary Elements</h2>
+
+<div id='slider4' class='swipe'>
+  <div>
+    <div style='display:block'><div>1</div></div>
+    <div style='display:none'><div>2</div></div>
+    <div style='display:none'><div>3</div></div>
+    <div style='display:none'><div>4</div></div>
+    <div style='display:none'><div>5</div></div>
+  </div>
+</div>
+
+<a href='#' onclick='slider4.prev();return false;'>prev</a> 
+<a href='#' onclick='slider4.next();return false;'>next</a>
+<br><br>
+
+
+		
+		
+		</section>
+		
+		<footer>
+			<h1>FOOTER</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis velit eaque earum beatae assumenda doloribus debitis. Soluta voluptatum natus architecto possimus excepturi debitis expedita magnam nemo delectus et exercitationem ipsa.</p>
+		</footer>
+		<script src='../../Swipe-1.0/swipe.js'></script>
+<script>
+new Swipe(document.getElementById('slider'));
+new Swipe(document.getElementById('slider2'));
+var slider3 = new Swipe(document.getElementById('slider3'));
+var slider4 = new Swipe(document.getElementById('slider4'));
+</script>
+	</body>
+</html>
